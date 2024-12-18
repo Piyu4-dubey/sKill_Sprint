@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/recommendation.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+               <img src="logi.png" alt="logo">
+               <div class="logo-text">SkillPrint</div>
+        </div>
+
+       
+ <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+        </div>
+        
+    </header>
+
+    <main>
+    <section id="roadmap">
+        <h2>Skill Guru</h2>
+        <div class="recommendation-input">
+            <input id="skillInput" type="text" placeholder="Enter the skill you want to master">
+            <button onclick="generateRoadmap()">Get Roadmap</button>
+        </div>
+        <div id="roadmap-results" class="roadmap-results"></div>
+        
+    </section>
+       
+        <section id="resources">
+            <h2>Recommended Learning Resources</h2>
+            <ul>
+                <li><a href="https://developer.android.com/guide/components/fundamentals" target="_blank">Android Development Fundamentals</a> - Learn Kotlin, C++ language and other SDK tools to Master Android....</li>
+                <li><a href="https://www.w3schools.com/java/java_intro.asp" target="_blank">Java Programming Masterclass</a> - Master Java with hands-on projects.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Website created by Piyush Ji Dubey | 2024 Consult Page | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/recommendation.js"></script>
+
+    
+</body>
+</html>
+

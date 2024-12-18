@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillPrint - Resource Curation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #FFA500;
+            --background-color: #f4f7f6;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+html,body{
+    height: 100%;
+}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            flex: 1;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Search Box */
+        .resource-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Resource Table */
+        table {
+            width: 100%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .hidden {
+            display: none;
+        }
+        /* Creative footer */
+       /* Footer Styling */
+footer {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+/* Get Certified Button */
+.get-certified-btn {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .get-certified-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-container container">
+            <div class="logo">
+                <img src="logi.png" alt="SkillPrint Logo">
+                <span class="logo-text">SkillPrint</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Resource Section -->
+    <div class="container">
+        <section class="resource-section">
+            <h1>Resource Curation</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Enter a technology">
+                <button onclick="searchResources()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+             <!-- Get Certified Button -->
+        <a href="certificate-generator.html">
+            <button class="get-certified-btn">Get Certified</button>
+        </a>
+
+            <!-- Resource Table (Initially Hidden) -->
+            <div id="resourceResults" class="hidden">
+                <h2>Search Results</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name of Technology</th>
+                            <th>Category</th>
+                            <th>Difficulty</th>
+                            <th>Market Demand</th>
+                            <th>Benefits</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resourceTableBody"></tbody>
+                </table>
+            </div>
+
+        </section>
+       
+        
+    </div>
+    
+
+    <script>
+        const resources = [
+            { name: 'Python Programming', category: 'Programming', difficulty: 'Beginner', demand: 'High', benefits: ['Easy to learn', 'Data Science', 'Wide libraries'] },
+            { name: 'Web Development', category: 'Web', difficulty: 'Intermediate', demand: 'Very High', benefits: ['Frontend & Backend', 'High job demand'] },
+            { name: 'Machine Learning', category: 'AI', difficulty: 'Advanced', demand: 'Growing Rapidly', benefits: ['Futuristic', 'Highly paid'] },
+            { name: 'JavaScript', category: 'Programming', difficulty: 'Intermediate', demand: 'Extremely High', benefits: ['Versatile', 'Supports React'] }
+        ];
+
+        function searchResources() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const tableBody = document.getElementById('resourceTableBody');
+            const resultsSection = document.getElementById('resourceResults');
+
+            // Clear previous results
+            tableBody.innerHTML = '';
+            resultsSection.classList.add('hidden');
+
+            // Filter resources
+            const filtered = resources.filter(r => r.name.toLowerCase().includes(searchTerm));
+
+            // Display results in table format
+            if (filtered.length > 0) {
+                filtered.forEach(r => {
+                    tableBody.innerHTML += `
+                        <tr>
+                            <td>${r.name}</td>
+                            <td>${r.category}</td>
+                            <td>${r.difficulty}</td>
+                            <td>${r.demand}</td>
+                            <td><ul>${r.benefits.map(b => `<li>${b}</li>`).join('')}</ul></td>
+                        </tr>
+                    `;
+                });
+                resultsSection.classList.remove('hidden');
+            } else {
+                alert('No resources found. Please try again with a valid technology name.');
+            }
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 SkillPrint. All rights reserved.</p>
+        <p>Website created by Piyush Ji Dubey</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+</body>
+</html>

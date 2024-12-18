@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult Page</title>
+    <style>
+ 
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling with Gradient */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #4A90E2, #FFA500); /* Corrected gradient rendering */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.header-container{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.logo h1 {
+  color: white;
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+
+/* Logo Styling */
+.logo img {
+    width: 100px; /* Logo size */
+    height: auto;
+    /* Removed gradient as background cannot be applied directly to an image */
+}
+
+/* Navigation styling */
+nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1; /* Add space between logo and navigation */
+}
+nav ul {
+    display: flex; /* Arrange navigation items in a row */
+    justify-content: center; /* Center the items horizontally */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+    margin: 0 20px; /* Add spacing between navigation links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fdfdfd;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0727f5;
+}
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #ff7e5f, #feb47b);
+            color: #333;
+        }
+
+       
+
+
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin: 20px;
+padding: 10px;
+        }
+
+.card {
+background: white;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+margin: 20px;
+padding: 20px;
+max-width: 300px;
+text-align: center;
+transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+ .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #ff7e5f;
+        }
+
+        .card button {
+            background: #ff7e5f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .card button:hover {
+            background: #feb47b;
+        }
+        /* Footer Styling with Gradient */
+footer {
+    background: linear-gradient(135deg, #4A90E2, #FFA500); /* Corrected footer gradient */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+        <div class="logo">
+            <img src="logi.png" alt="Company Logo">
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+        
+    </header>
+    
+
+    <div class="container">
+        <!-- Schedule Zoom Meeting -->
+        <div class="card">
+            <h2>Schedule Zoom Meeting</h2>
+            <img src="zzoom.png" alt="Zoom Meeting">
+            <button onclick="scheduleZoom()">Schedule Now</button>
+        </div>
+
+        <!-- Schedule Voice Call -->
+        <div class="card">
+            <h2>Schedule Voice Call</h2>
+            <img src="voice.png" alt="Voice Call">
+            <button onclick="scheduleVoiceCall()">Schedule Now</button>
+        </div>
+
+        <!-- Schedule Chat Assistant -->
+        <div class="card">
+            <h2>Chat-Based Assistant</h2>
+            <img src="boot.png" alt="Chat Assistant">
+            <button onclick="openChat()">Start Chat</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Website created by Piyush Ji Dubey | 2024 Consult Page | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function scheduleZoom() {
+            const zoomLink = "https://zoom.us/schedule"; // Replace with actual scheduling link
+            alert("Redirecting to Zoom scheduling...");
+            window.open(zoomLink, "_blank");
+        }
+
+        function scheduleVoiceCall() {
+            const phoneNumber = prompt("Enter your phone number for the voice call:");
+            if (phoneNumber) {
+                alert("Voice call scheduled! Our team will contact you at " + phoneNumber);
+            } else {
+                alert("Voice call scheduling canceled.");
+            }
+        }
+
+        function openChat() {
+            const chatUrl = "https://your-chat-assistant-link.com"; // Replace with actual chat assistant link
+            alert("Opening chat assistant...");
+            window.open(chatUrl, "_blank");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+/* Define global variables for colors */
+:root {
+  --primary-color: #4A90E2; /* Primary blue color */
+  --secondary-color: #FFA500; /* Orange secondary color */
+  --background-color: #f4f7f6; /* Light background */
+  --text-color: #2c3e50; /* Dark text color */
+}
+
+/* Reset default margin, padding, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Header Styling with gradient background */
+header {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+        /* Navigation Styling */  
+        nav { 
+           display: flex;
+          justify-content: flex-end;  
+         flex-grow: 1; /* Allow nav to take up remaining space */  
+      }  
+
+/* Navigation Styling */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Services Section */
+.services {
+  margin: 40px;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service {
+  width: 30%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.service a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-icon {
+  margin-bottom: 20px;
+}
+
+.service-icon img {
+  max-width: 50px;
+}
+
+.service h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Reviews Section */
+#reviews {
+  margin-top: 50px;
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+#reviews h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.review-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.review-card {
+  width: 300px;
+  background-color: #d54e4e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.rating {
+  color: #FFA500;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Footer Styling */
+footer {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 10px 20px;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+  }
+
+  nav ul li {
+      margin-bottom: 10px;
+  }
+
+  .service-container {
+      flex-direction: column;
+      gap: 20px;
+  }
+
+  .service {
+      width: 100%;
+  }
+
+  .review-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
